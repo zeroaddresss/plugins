@@ -1,5 +1,35 @@
 # Cursor plugins
 
+## Pi (pstack skills as a pi package)
+
+This fork adds a root `package.json` so [pi](https://github.com/badlogic/pi-mono) installs **only** the 47 `pstack/skills` (poteto's stack) as one package — the other plugin directories in this repo are not exposed.
+
+1. Install:
+
+```bash
+pi install git:github.com/zeroaddresss/plugins
+```
+
+2. `pi install` turns all 47 on (~tens of thousands of tokens of skill metadata in every session). To keep them off and pick selectively, replace the package entry in `~/.pi/agent/settings.json` with:
+
+```json
+{
+  "packages": [
+    {
+      "source": "git:github.com/zeroaddresss/plugins",
+      "skills": ["!**"]
+    }
+  ]
+}
+```
+
+Then run `pi config` and enable what you want (keep `"!**"` first or pi loads everything plus your picks). Starters: `poteto-mode`, `grill`, `architect`, `blast-radius`, `bro`.
+
+Not loaded (not pi package resources): `pstack/agents`, `pstack/automations`, hooks, `.mcp.json`.
+
+---
+
+
 Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.
 
 ## Plugins
