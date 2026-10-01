@@ -1,0 +1,12 @@
+{
+  "name": "pstack-pi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pi package exposing the pstack plugin skills (@poteto) from cursor/plugins. Fork scoped to pstack/skills only.",
+  "keywords": ["pi-package"],
+  "pi": {
+    "skills": [
+      "pstack/skills"
+    ]
+  }
+}
